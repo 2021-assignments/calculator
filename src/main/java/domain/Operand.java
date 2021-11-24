@@ -6,7 +6,7 @@ public class Operand {
 
     public Operand(String input) {
         if (!"+".equals(input) && !"-".equals(input) && !"*".equals(input) && !"/".equals(input)) {
-            throw new IllegalArgumentException("input format is wrong.");
+            throw new IllegalArgumentException("-_-");
         }
         this.value = input;
     }
@@ -27,6 +27,6 @@ public class Operand {
         {
             return operand1 / operand2;
         }
-        throw new IllegalStateException("illegal status!!!");
+        throw new IllegalStateException("-_-");
     }
 }
