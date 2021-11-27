@@ -1,4 +1,5 @@
-import domain.Operand;
+import domain.Formula;
+import domain.Operator;
 import exception.IllegalUserInputException;
 
 import java.io.BufferedReader;
@@ -19,24 +20,11 @@ public class Main {
                     System.out.println("bye");
                     break;
                 }
-                System.out.println("result : " + calculate(input));
+                Formula formula = new Formula(input);
+                System.out.println("result : " + formula.calculate());
             } catch (NumberFormatException e) {
                 throw new IllegalUserInputException("-_-");
             }
         }
-    }
-
-    private static long calculate(String input)
-    {
-        String[] split = input.split(" ");
-
-        if (split.length != 3) {
-            throw new IllegalUserInputException("-_-");
-        }
-        long operand1 = Long.parseLong(split[0]);
-        long operand2 = Long.parseLong(split[2]);
-        Operand operand = new Operand(split[1]);
-
-        return operand.calculate(operand1, operand2);
     }
 }
