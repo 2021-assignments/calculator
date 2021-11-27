@@ -10,14 +10,12 @@ public class Main {
     private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
-        while (true)
-        {
+        while (true) {
             try {
                 System.out.println("If you want to end, enter \"exit\".");
                 System.out.print("enter formula\n>> ");
                 String input = br.readLine();
-                if(input.equals("exit"))
-                {
+                if (input.equals("exit")) {
                     System.out.println("bye");
                     break;
                 }
@@ -37,6 +35,6 @@ public class Main {
                 throw new IllegalUserInputException("-_-");
             }
 
+        }
     }
-}
 }
