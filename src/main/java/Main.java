@@ -17,7 +17,7 @@ public class Main {
             String[] split = input.split(" ");
 
             if (split.length != 3) {
-                throw new IllegalUserInputException("formula format is wrong.");
+                throw new IllegalUserInputException("-_-");
             }
             long operand1 = Long.parseLong(split[0]);
             long operand2 = Long.parseLong(split[2]);
@@ -26,7 +26,7 @@ public class Main {
             System.out.println("result : " + operand.calculate(operand1, operand2));
 
         } catch (NumberFormatException e) {
-            throw new IllegalUserInputException("formula format is wrong.");
+            throw new IllegalUserInputException("-_-");
         }
     }
 }

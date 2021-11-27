@@ -5,8 +5,8 @@ public class Operand {
     private final String value;
 
     public Operand(String input) {
-        if (!"+".equals(input) && !"-".equals(input)) {
-            throw new IllegalArgumentException("input format is wrong.");
+        if (!"+".equals(input) && !"-".equals(input) && !"*".equals(input) && !"/".equals(input)) {
+            throw new IllegalArgumentException("-_-");
         }
         this.value = input;
     }
@@ -19,6 +19,14 @@ public class Operand {
         {
             return operand1 - operand2;
         }
-        throw new IllegalStateException("illegal status!!!");
+        else if("*".equals(value))
+        {
+            return operand1 * operand2;
+        }
+        else if("/".equals(value))
+        {
+            return operand1 / operand2;
+        }
+        throw new IllegalStateException("-_-");
     }
 }
