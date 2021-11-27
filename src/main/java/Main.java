@@ -19,22 +19,24 @@ public class Main {
                     System.out.println("bye");
                     break;
                 }
-
-                String[] split = input.split(" ");
-
-                if (split.length != 3) {
-                    throw new IllegalUserInputException("-_-");
-                }
-                long operand1 = Long.parseLong(split[0]);
-                long operand2 = Long.parseLong(split[2]);
-                Operand operand = new Operand(split[1]);
-
-                System.out.println("result : " + operand.calculate(operand1, operand2));
-
+                System.out.println("result : " + calculate(input));
             } catch (NumberFormatException e) {
                 throw new IllegalUserInputException("-_-");
             }
-
         }
+    }
+
+    private static long calculate(String input)
+    {
+        String[] split = input.split(" ");
+
+        if (split.length != 3) {
+            throw new IllegalUserInputException("-_-");
+        }
+        long operand1 = Long.parseLong(split[0]);
+        long operand2 = Long.parseLong(split[2]);
+        Operand operand = new Operand(split[1]);
+
+        return operand.calculate(operand1, operand2);
     }
 }
