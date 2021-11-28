@@ -18,8 +18,29 @@ public class FormulaTest {
     @Test
     void calculate()
     {
-        Formula formula = new Formula("2 + 3");
-        long result = formula.calculate();
-        assertThat(result).isEqualTo(5);
+        // 덧셈 테스트
+        Formula formula1 = new Formula("2 + 3");
+        long result1 = formula1.calculate();
+        assertThat(result1).isEqualTo(5);
+
+        // 뺄셈 테스트
+        Formula formula2 = new Formula("3 - 2");
+        long result2 = formula2.calculate();
+        assertThat(result2).isEqualTo(1);
+
+        // 곱셈 테스트
+        Formula formula3 = new Formula("2 * 3");
+        long result3 = formula3.calculate();
+        assertThat(result3).isEqualTo(6);
+
+        // 나눗셈 테스트 (10 / 2)
+        Formula formula4 = new Formula("10 / 2");
+        long result4 = formula4.calculate();
+        assertThat(result4).isEqualTo(5);
+
+        // 나눗셈 테스트 (10 / 0) -> 이때 예외 발생해야함
+        Formula formula5 = new Formula("10 / 0");
+        long result5 = formula5.calculate();
+        assertThat(result5).isEqualTo(1);
     }
 }
