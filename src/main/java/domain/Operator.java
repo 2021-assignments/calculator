@@ -1,10 +1,10 @@
 package domain;
 
-public class Operand {
+public class Operator {
 
     private final String value;
 
-    public Operand(String input) {
+    public Operator(String input) {
         if (!"+".equals(input) && !"-".equals(input) && !"*".equals(input) && !"/".equals(input)) {
             throw new IllegalArgumentException("-_-");
         }
