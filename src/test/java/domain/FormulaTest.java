@@ -40,7 +40,6 @@ public class FormulaTest {
 
         // 나눗셈 테스트 (10 / 0) -> 이때 예외 발생해야함
         Formula formula5 = new Formula("10 / 0");
-        long result5 = formula5.calculate();
-        assertThat(result5).isEqualTo(1);
+        assertThatThrownBy(() -> formula5.calculate());
     }
 }
